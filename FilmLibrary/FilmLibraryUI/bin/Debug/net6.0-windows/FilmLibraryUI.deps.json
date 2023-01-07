@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "FilmLibraryUI/1.0.0": {
+        "dependencies": {
+          "FilmLibrary": "1.0.0"
+        },
+        "runtime": {
+          "FilmLibraryUI.dll": {}
+        }
+      },
+      "FilmLibrary/1.0.0": {
+        "runtime": {
+          "FilmLibrary.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FilmLibraryUI/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FilmLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

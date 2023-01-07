@@ -1,0 +1,12 @@
+C:\Users\endez\Documents\VS Pojects\Film Library\Film-Library\FilmLibrary\FilmLibrary\bin\Debug\net6.0\FilmLibrary.deps.json
+C:\Users\endez\Documents\VS Pojects\Film Library\Film-Library\FilmLibrary\FilmLibrary\bin\Debug\net6.0\FilmLibrary.dll
+C:\Users\endez\Documents\VS Pojects\Film Library\Film-Library\FilmLibrary\FilmLibrary\bin\Debug\net6.0\FilmLibrary.pdb
+C:\Users\endez\Documents\VS Pojects\Film Library\Film-Library\FilmLibrary\FilmLibrary\obj\Debug\net6.0\FilmLibrary.csproj.AssemblyReference.cache
+C:\Users\endez\Documents\VS Pojects\Film Library\Film-Library\FilmLibrary\FilmLibrary\obj\Debug\net6.0\FilmLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\endez\Documents\VS Pojects\Film Library\Film-Library\FilmLibrary\FilmLibrary\obj\Debug\net6.0\FilmLibrary.AssemblyInfoInputs.cache
+C:\Users\endez\Documents\VS Pojects\Film Library\Film-Library\FilmLibrary\FilmLibrary\obj\Debug\net6.0\FilmLibrary.AssemblyInfo.cs
+C:\Users\endez\Documents\VS Pojects\Film Library\Film-Library\FilmLibrary\FilmLibrary\obj\Debug\net6.0\FilmLibrary.csproj.CoreCompileInputs.cache
+C:\Users\endez\Documents\VS Pojects\Film Library\Film-Library\FilmLibrary\FilmLibrary\obj\Debug\net6.0\FilmLibrary.dll
+C:\Users\endez\Documents\VS Pojects\Film Library\Film-Library\FilmLibrary\FilmLibrary\obj\Debug\net6.0\refint\FilmLibrary.dll
+C:\Users\endez\Documents\VS Pojects\Film Library\Film-Library\FilmLibrary\FilmLibrary\obj\Debug\net6.0\FilmLibrary.pdb
+C:\Users\endez\Documents\VS Pojects\Film Library\Film-Library\FilmLibrary\FilmLibrary\obj\Debug\net6.0\ref\FilmLibrary.dll
