@@ -1,4 +1,7 @@
-﻿using System;
+﻿using FilmLibrary;
+using FilmLibrary.DataAccess;
+using FilmLibrary.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,18 +22,48 @@ namespace FilmLibraryUI
 
         private void AddFilmButton_Click(object sender, EventArgs e)
         {
+            if (ValidateForm())
+            {
+                FilmModel model = new FilmModel(
+                    FilmTitleValue.Text, 
+                    FilmDescriptionValue.Text, 
+                    FilmReleaseDateMonthCalander.SelectionStart, 
+                    FilmRatingValue.Text);
 
+                GlobalConfig.Connection.CreateFilm(model);
+
+                FilmTitleValue.Text = ""; ;
+                FilmDescriptionValue.Text = "";
+                FilmReleaseDateMonthCalander.SelectionStart = DateTime.Now;
+                FilmRatingValue.Text = "0";
+            }
         }
 
         private bool ValidateForm()
         {
             bool output = true;
 
-            if(TitleTextBox)
+            if(FilmTitleValue.Text == "" || FilmDescriptionValue.Text == "")
+            {
+                output = false;
+            }
 
-            DateTime dt = ReleaseDateMonthCalander.SelectionStart;
+            DateTime dt = FilmReleaseDateMonthCalander.SelectionStart;
 
             if(dt > DateTime.Today)
+            {
+                output = false;
+            }
+
+            decimal rating = 0;
+            bool ratingValid = decimal.TryParse(FilmRatingValue.Text, out rating);
+
+            if (!ratingValid)
+            {
+                output = false;
+            }
+
+            if(rating < 0 || rating > 10)
             {
                 output = false;
             }

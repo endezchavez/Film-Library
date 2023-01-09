@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FilmLibrary
+namespace FilmLibrary.Models
 {
     public class FilmListModel
     {

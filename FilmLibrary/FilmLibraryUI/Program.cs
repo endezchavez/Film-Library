@@ -1,3 +1,5 @@
+using FilmLibrary;
+
 namespace FilmLibraryUI
 {
     internal static class Program
@@ -13,9 +15,9 @@ namespace FilmLibraryUI
             ApplicationConfiguration.Initialize();
 
             //Initialize database connections
-            FilmLibrary.GlobalConfig.InitializeConnections(true, true);
+            FilmLibrary.GlobalConfig.InitializeConnections(DatabaseType.TEXT_FILE);
             //Application.Run(new FilmLibraryViewerForm());
-            Application.Run(new AddFilmForm());
+            Application.Run(new FilmLibraryViewerForm());
         }
     }
 }

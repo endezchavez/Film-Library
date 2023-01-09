@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace FilmLibrary
 {
-    public interface IDataConnection
+    public enum DatabaseType
     {
-        FilmModel CreateFilm(FilmModel model);
+        SQL,
+        TEXT_FILE,
     }
 }

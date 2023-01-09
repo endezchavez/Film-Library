@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FilmLibrary
+namespace FilmLibrary.Models
 {
     public class FilmModel
     {
@@ -13,9 +13,9 @@ namespace FilmLibrary
         /// </summary>
         public int Id { get; set; }
         /// <summary>
-        /// The film's name
+        /// The film's title
         /// </summary>
-        public string Name { get; set; } = "";
+        public string Title { get; set; } = "";
         /// <summary>
         /// A description of what the film is about
         /// </summary>
@@ -23,10 +23,27 @@ namespace FilmLibrary
         /// <summary>
         /// The date on which the film was released
         /// </summary>
-        public DateOnly ReleaseDate { get; set; }
+        public DateTime ReleaseDate { get; set; }
         /// <summary>
         /// The film's rating from 1-5 
         /// </summary>
-        public int Rating { get; set; }
+        public decimal Rating { get; set; }
+
+        public FilmModel()
+        {
+
+        }
+
+        public FilmModel(string title, string description, DateTime releaseDate, string rating)
+        {
+            Title = title;
+            Description = description;
+            //ReleaseDate = DateOnly.FromDateTime(releaseDate.Date);
+            ReleaseDate = releaseDate;
+
+            decimal ratingValue = 0;
+            decimal.TryParse(rating, out ratingValue);
+            Rating = ratingValue;
+        }
     }
 }
