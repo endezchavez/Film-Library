@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OWDX09zRmt8Ne/POBy2kf5PVAFNz9qFw/HSp4IyqSSoRv/booaZqP+FhFnZ7Yf6MatwUKXxzQZy6L8vLYWXZBw==",
+  "dgSpecHash": "PsHdB3sH26XMyj/G6DreuwDaKEhArHVjGIidmYblBj3fEHfPB6NrP3DgAkbxHW7ZPCSCtHfI5AUxBmR8CglHTQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\endez\\Documents\\VS Pojects\\Film-Library\\FilmLibrary\\FilmLibrary\\FilmLibrary.csproj",
+  "projectFilePath": "C:\\Users\\endez\\Documents\\VS Projects\\Film-Library\\FilmLibrary\\FilmLibrary\\FilmLibrary.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\endez\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\endez\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",

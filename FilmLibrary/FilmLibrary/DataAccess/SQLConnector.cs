@@ -39,16 +39,44 @@ namespace FilmLibrary.DataAccess
             }
         }
 
+        public void DeleteFilm(FilmModel model)
+        {
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.ConnectionString(db)))
+            {
+                var p = new DynamicParameters();
+                p.Add("@id", model.Id);
+                
+                connection.Execute("dbo.spFilm_Delete", p, commandType: CommandType.StoredProcedure);
+
+            }
+        }
+
         public List<FilmModel> GetFilm_All()
         {
             List<FilmModel> output;
 
             using (IDbConnection connection = new SqlConnection(GlobalConfig.ConnectionString(db)))
             {
-                output = connection.Query<FilmModel>("dbo.sFilm_GetAll").ToList();
+                output = connection.Query<FilmModel>("dbo.spFilm_GetAll").ToList();
             }
 
             return output;
+        }
+
+        public void UpdateFilm(FilmModel model)
+        {
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.ConnectionString(db)))
+            {
+                var p = new DynamicParameters();
+                p.Add("@id", model.Id);
+                p.Add("@title", model.Title);
+                p.Add("@description", model.Description);
+                p.Add("@releaseDate", model.ReleaseDate);
+                p.Add("@rating", model.Rating);
+                
+                connection.Execute("dbo.spFilm_Update", p, commandType: CommandType.StoredProcedure);
+
+            }
         }
     }
 }

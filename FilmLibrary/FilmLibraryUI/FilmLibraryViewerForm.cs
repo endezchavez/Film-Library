@@ -18,7 +18,7 @@ namespace FilmLibraryUI
             FilmLibraryListBox.DisplayMember = "Title";
         }
 
-        private void FilmAdded(object sender, EventArgs e)
+        private void FilmAddedOrUpdated(object sender, EventArgs e)
         {
             filmList = GlobalConfig.Connection.GetFilm_All();
             WireUpFilmList();
@@ -57,11 +57,23 @@ namespace FilmLibraryUI
 
         private void AddFilmButton_Click(object sender, EventArgs e)
         {
-            if (!Application.OpenForms.OfType<EditFilmForm>().Any())
+            if (!Application.OpenForms.OfType<AddFilmForm>().Any())
             {
                 AddFilmForm addFilmForm = new AddFilmForm();
-                addFilmForm.FilmAdded += new EventHandler(FilmAdded);
+                addFilmForm.FilmAdded += new EventHandler(FilmAddedOrUpdated);
                 addFilmForm.Show();
+            }
+        }
+
+        private void EditFilmButton_Click(object sender, EventArgs e)
+        {
+            FilmModel film = (FilmModel)FilmLibraryListBox.SelectedItem;
+
+            if (!Application.OpenForms.OfType<EditFilmForm>().Any())
+            {
+                EditFilmForm editFilmForm = new EditFilmForm(film);
+                editFilmForm.FilmDataChanged += new EventHandler(FilmAddedOrUpdated);
+                editFilmForm.Show();
             }
         }
     }

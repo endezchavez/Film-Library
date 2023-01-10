@@ -42,9 +42,34 @@ namespace FilmLibrary.DataAccess
             return model;
         }
 
+        public void UpdateFilm(FilmModel model)
+        {
+            // Load the text file and convert the text to a List<FilmModel>
+            List<FilmModel> films = FilmsFile.FullFilePath().LoadFile().ConvertToFilmModels();
+
+            //TODO: Check to make sure the ID exists
+            foreach (FilmModel film in films)
+            {
+                if(film.Id == model.Id)
+                {
+                    film.Title = model.Title;
+                    film.Description = model.Description;
+                    film.ReleaseDate = model.ReleaseDate;
+                    film.Rating = model.Rating;
+
+                    films.SaveToFilmFile(FilmsFile);
+                }
+            }
+        }
+
         public List<FilmModel> GetFilm_All()
         {
             return FilmsFile.FullFilePath().LoadFile().ConvertToFilmModels();
+        }
+
+        public void DeleteFilm(FilmModel model)
+        {
+            throw new NotImplementedException();
         }
     }
 }
