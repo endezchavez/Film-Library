@@ -15,6 +15,17 @@ namespace FilmLibraryUI
 {
     public partial class AddFilmForm : Form
     {
+        public event EventHandler FilmAdded;
+
+        protected virtual void OnFilmAdded(EventArgs e)
+        {
+            EventHandler eh = FilmAdded;
+            if(eh != null)
+            {
+                eh(this, e);
+            }
+        }
+
         public AddFilmForm()
         {
             InitializeComponent();
@@ -36,6 +47,8 @@ namespace FilmLibraryUI
                 FilmDescriptionValue.Text = "";
                 FilmReleaseDateMonthCalander.SelectionStart = DateTime.Now;
                 FilmRatingValue.Text = "0";
+
+                OnFilmAdded(null);
             }
         }
 

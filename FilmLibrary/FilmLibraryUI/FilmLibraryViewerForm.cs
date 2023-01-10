@@ -9,10 +9,19 @@ namespace FilmLibraryUI
         private List<FilmModel> filmList = GlobalConfig.Connection.GetFilm_All();
         private FilmModel selectedFilm;
 
+
         private void WireUpFilmList()
         {
+            FilmLibraryListBox.DataSource = null;
+
             FilmLibraryListBox.DataSource = filmList;
             FilmLibraryListBox.DisplayMember = "Title";
+        }
+
+        private void FilmAdded(object sender, EventArgs e)
+        {
+            filmList = GlobalConfig.Connection.GetFilm_All();
+            WireUpFilmList();
         }
 
         private void CreateSampleData()
@@ -26,6 +35,7 @@ namespace FilmLibraryUI
         {
             InitializeComponent();
 
+
             //CreateSampleData();
 
             WireUpFilmList();
@@ -35,10 +45,24 @@ namespace FilmLibraryUI
         {
             FilmModel film = (FilmModel)FilmLibraryListBox.SelectedItem;
 
-            FilmTitleValue.Text = film.Title;
-            FilmDescriptionValue.Text = film.Description;
-            FilmReleaseDateValue.Text = film.ReleaseDate.ToString("dd/MM/yyyy");
-            FilmRatingValue.Text = film.Rating.ToString();
+            if(film != null)
+            {
+                FilmTitleValue.Text = film.Title;
+                FilmDescriptionValue.Text = film.Description;
+                FilmReleaseDateValue.Text = film.ReleaseDate.ToString("dd/MM/yyyy");
+                FilmRatingValue.Text = film.Rating.ToString();
+            }
+            
+        }
+
+        private void AddFilmButton_Click(object sender, EventArgs e)
+        {
+            if (!Application.OpenForms.OfType<EditFilmForm>().Any())
+            {
+                AddFilmForm addFilmForm = new AddFilmForm();
+                addFilmForm.FilmAdded += new EventHandler(FilmAdded);
+                addFilmForm.Show();
+            }
         }
     }
 }
