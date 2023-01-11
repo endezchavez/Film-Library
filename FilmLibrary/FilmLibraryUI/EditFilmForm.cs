@@ -57,6 +57,8 @@ namespace FilmLibraryUI
                 GlobalConfig.Connection.UpdateFilm(selectedModel);
 
                 OnFilmDataChanged(null);
+
+                this.Close();
             }
         }
 
@@ -97,9 +99,16 @@ namespace FilmLibraryUI
         private void DeleteFilmButton_Click(object sender, EventArgs e)
         {
             //TODO: Add popup box asking if the user is sure
-            GlobalConfig.Connection.DeleteFilm(selectedModel);
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this film?", "Delete Confirmation", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                GlobalConfig.Connection.DeleteFilm(selectedModel);
 
-            OnFilmDataChanged(null);
+                OnFilmDataChanged(null);
+
+                this.Close();
+            }
+            
         }
     }
 }

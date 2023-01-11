@@ -22,6 +22,14 @@ namespace FilmLibraryUI
         {
             filmList = GlobalConfig.Connection.GetFilm_All();
             WireUpFilmList();
+
+            if(filmList.Count == 0)
+            {
+                FilmTitleValue.Text = "<None>";
+                FilmDescriptionValue.Text = "<None>";
+                FilmReleaseDateValue.Text = "<None>";
+                FilmRatingValue.Text = "0";
+            }
         }
 
         private void CreateSampleData()
