@@ -83,5 +83,10 @@ namespace FilmLibraryUI
 
             return output;
         }
+
+        private void AddFilmForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

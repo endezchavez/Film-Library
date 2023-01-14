@@ -64,9 +64,17 @@ namespace FilmLibraryUI
 
         private bool ValidateForm()
         {
-            //TODO: Check if information has actually changed
 
             bool output = true;
+
+            //Check if information has changed
+            if (FilmTitleValue.Text.Equals(selectedModel.Title) &&
+                FilmDescriptionValue.Text.Equals(selectedModel.Description) &&
+                FilmReleaseDateMonthCalander.SelectionStart == selectedModel.ReleaseDate &&
+                decimal.Parse(FilmRatingValue.Text) == selectedModel.Rating)
+            {
+                output = false;
+            }
 
             if (FilmTitleValue.Text == "" || FilmDescriptionValue.Text == "")
             {

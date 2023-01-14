@@ -69,7 +69,24 @@ namespace FilmLibrary.DataAccess
 
         public void DeleteFilm(FilmModel model)
         {
-            throw new NotImplementedException();
+            List<FilmModel> films = FilmsFile.FullFilePath().LoadFile().ConvertToFilmModels();
+
+            for (int i = films.Count - 1; i >= 0; i--)
+            {
+                if (films[i].Id == model.Id)
+                {
+                    films.RemoveAt(i);
+
+                    films.SaveToFilmFile(FilmsFile);
+                }
+            }
+
+        }
+
+        public List<FilmModel> GetFilm_ByTitle(string input)
+        {
+            List<FilmModel> allFilms = FilmsFile.FullFilePath().LoadFile().ConvertToFilmModels();
+            return allFilms.Where(x => x.Title.Contains(input, StringComparison.OrdinalIgnoreCase)).ToList();
         }
     }
 }

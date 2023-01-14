@@ -15,7 +15,7 @@ namespace FilmLibraryUI
             ApplicationConfiguration.Initialize();
 
             //Initialize database connections
-            FilmLibrary.GlobalConfig.InitializeConnections(DatabaseType.SQL);
+            FilmLibrary.GlobalConfig.InitializeConnections(DatabaseType.TEXT_FILE);
             //Application.Run(new FilmLibraryViewerForm());
             Application.Run(new FilmLibraryViewerForm());
         }

@@ -11,6 +11,7 @@ namespace FilmLibrary.DataAccess
     {
         FilmModel CreateFilm(FilmModel model);
         List<FilmModel> GetFilm_All();
+        List<FilmModel> GetFilm_ByTitle(string input);
         void UpdateFilm(FilmModel model);
         void DeleteFilm(FilmModel model);
     }

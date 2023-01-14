@@ -63,6 +63,20 @@ namespace FilmLibrary.DataAccess
             return output;
         }
 
+        public List<FilmModel> GetFilm_ByTitle(string input)
+        {
+            List<FilmModel> output;
+
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.ConnectionString(db)))
+            {
+                var p = new DynamicParameters();
+                p.Add("@title", input);
+                output = connection.Query<FilmModel>("dbo.spFilm_GetByTitle", p, commandType: CommandType.StoredProcedure).ToList();
+            }
+
+            return output;
+        }
+
         public void UpdateFilm(FilmModel model)
         {
             using (IDbConnection connection = new SqlConnection(GlobalConfig.ConnectionString(db)))
@@ -78,5 +92,6 @@ namespace FilmLibrary.DataAccess
 
             }
         }
+        
     }
 }

@@ -8,6 +8,7 @@ namespace FilmLibraryUI
     {
         private List<FilmModel> filmList = GlobalConfig.Connection.GetFilm_All();
         private FilmModel selectedFilm;
+        private SortType sortType;
 
 
         private void WireUpFilmList()
@@ -16,6 +17,20 @@ namespace FilmLibraryUI
 
             FilmLibraryListBox.DataSource = filmList;
             FilmLibraryListBox.DisplayMember = "Title";
+        }
+
+        private void WireUpSortByComboBox()
+        {
+            foreach (SortType sortType in Enum.GetValues(typeof(SortType)))
+            {
+                var item = new ComboBoxItem<SortType>();
+                item.DisplayMember = SortTypeExtensions.ToString(sortType);
+                item.ValueMember = sortType;
+                SortByComboBox.Items.Add(item);
+            }
+
+            SortByComboBox.SelectedItem = SortByComboBox.Items[0];
+
         }
 
         private void FilmAddedOrUpdated(object sender, EventArgs e)
@@ -43,10 +58,11 @@ namespace FilmLibraryUI
         {
             InitializeComponent();
 
-
             //CreateSampleData();
 
             WireUpFilmList();
+
+            WireUpSortByComboBox();
         }
 
         private void FilmLibraryListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -83,6 +99,37 @@ namespace FilmLibraryUI
                 editFilmForm.FilmDataChanged += new EventHandler(FilmAddedOrUpdated);
                 editFilmForm.Show();
             }
+        }
+
+
+        private void SearchBox_TextChanged(object sender, EventArgs e)
+        {
+            filmList = GlobalConfig.Connection.GetFilm_ByTitle(SearchBox.Text);
+
+            WireUpFilmList();
+
+        }
+
+        private void SortByComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            switch ((SortType)SortByComboBox.SelectedIndex)
+            {
+                case SortType.RATING_HIGH_TO_LOW:
+                    filmList = filmList.OrderByDescending(x => x.Rating).ToList();
+                    break;
+                case SortType.RATING_LOW_TO_HIGH:
+                    filmList = filmList.OrderBy(x => x.Rating).ToList();
+                    break;
+                case SortType.RELEASE_DATE_ASCENDING:
+                    filmList = filmList.OrderBy(x => x.ReleaseDate).ToList();
+                    break;
+                case SortType.RELEASE_DATE_DESCENDING:
+                    filmList = filmList.OrderByDescending(x => x.ReleaseDate).ToList();
+                    break;
+            }
+
+            WireUpFilmList();
         }
     }
 }
