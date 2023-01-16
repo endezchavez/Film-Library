@@ -11,7 +11,6 @@ namespace FilmLibrary.DataAccess
     public class TextConnector : IDataConnection
     {
         private const string FilmsFile = "FilmModels.csv";
-        // TODO: Make the CreateFilm method actually save to a text file
         /// <summary>
         /// Saves a film to a text file
         /// </summary>
@@ -42,6 +41,10 @@ namespace FilmLibrary.DataAccess
             return model;
         }
 
+        /// <summary>
+        /// Updates a given film's data in the text file
+        /// </summary>
+        /// <param name="model">The film to be updated</param>
         public void UpdateFilm(FilmModel model)
         {
             // Load the text file and convert the text to a List<FilmModel>
@@ -62,11 +65,19 @@ namespace FilmLibrary.DataAccess
             }
         }
 
+        /// <summary>
+        /// Get's all films from a text file
+        /// </summary>
+        /// <returns>A list of all films in the text file</returns>
         public List<FilmModel> GetFilm_All()
         {
             return FilmsFile.FullFilePath().LoadFile().ConvertToFilmModels();
         }
 
+        /// <summary>
+        /// Deletes a given film from the text file
+        /// </summary>
+        /// <param name="model">The film to be deleted</param>
         public void DeleteFilm(FilmModel model)
         {
             List<FilmModel> films = FilmsFile.FullFilePath().LoadFile().ConvertToFilmModels();
@@ -80,9 +91,13 @@ namespace FilmLibrary.DataAccess
                     films.SaveToFilmFile(FilmsFile);
                 }
             }
-
         }
 
+        /// <summary>
+        /// Get's all films that match a given title
+        /// </summary>
+        /// <param name="input">The title we are searching for</param>
+        /// <returns>A list of all films that match the search string</returns>
         public List<FilmModel> GetFilm_ByTitle(string input)
         {
             List<FilmModel> allFilms = FilmsFile.FullFilePath().LoadFile().ConvertToFilmModels();

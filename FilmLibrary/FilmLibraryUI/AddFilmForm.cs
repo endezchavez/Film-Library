@@ -17,6 +17,10 @@ namespace FilmLibraryUI
     {
         public event EventHandler FilmAdded;
 
+        /// <summary>
+        /// An event that is triggered when a new film is added
+        /// </summary>
+        /// <param name="e">Any arguments required for the event</param>
         protected virtual void OnFilmAdded(EventArgs e)
         {
             EventHandler eh = FilmAdded;
@@ -31,6 +35,11 @@ namespace FilmLibraryUI
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Adds a new film to the selected connection (Text file or Database) and triggers an event for changes in the main form
+        /// </summary>
+        /// <param name="sender">The object that triggered the event</param>
+        /// <param name="e">Any arguments required for the event</param>
         private void AddFilmButton_Click(object sender, EventArgs e)
         {
             if (ValidateForm())
@@ -48,17 +57,38 @@ namespace FilmLibraryUI
                 FilmReleaseDateMonthCalander.SelectionStart = DateTime.Now;
                 FilmRatingValue.Text = "0";
 
+
                 OnFilmAdded(null);
             }
         }
-
+        /// <summary>
+        /// Validates the user's input and displays error label's if input is invalid and displays error label's if input is invalid
+        /// </summary>
+        /// <returns>Whether or not the input from the user is valid</returns>
         private bool ValidateForm()
         {
             bool output = true;
 
-            if(FilmTitleValue.Text == "" || FilmDescriptionValue.Text == "")
+            if(FilmTitleValue.Text == "")
             {
                 output = false;
+
+                FilmTitleErrorLabel.Text = "Film title must contain at least 1 character";
+            }
+            else
+            {
+                FilmTitleErrorLabel.Text = "";
+            }
+
+            if (FilmDescriptionValue.Text == "")
+            {
+                output = false;
+
+                FilmDescriptionErrorLabel.Text = "Film description must contain at least 1 character";
+            }
+            else
+            {
+                FilmDescriptionErrorLabel.Text = "";
             }
 
             DateTime dt = FilmReleaseDateMonthCalander.SelectionStart;
@@ -66,6 +96,12 @@ namespace FilmLibraryUI
             if(dt > DateTime.Today)
             {
                 output = false;
+
+                FilmReleaseDateErrorLabel.Text = "Film release date must be earlier than today";
+            }
+            else
+            {
+                FilmReleaseDateErrorLabel.Text = "";
             }
 
             decimal rating = 0;
@@ -74,19 +110,24 @@ namespace FilmLibraryUI
             if (!ratingValid)
             {
                 output = false;
+
+                FilmRatingErrorLabel.Text = "Film rating must be a number e.g(7.8)";
             }
 
-            if(rating < 0 || rating > 10)
+            if (rating < 0 || rating > 10)
             {
                 output = false;
+
+                FilmRatingErrorLabel.Text = "Film rating must be between 0 and 10";
+            }
+
+            if(ratingValid && (rating >= 0 && rating <= 10))
+            {
+                FilmRatingErrorLabel.Text = "";
             }
 
             return output;
         }
 
-        private void AddFilmForm_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

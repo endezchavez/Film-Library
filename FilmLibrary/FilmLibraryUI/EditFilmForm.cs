@@ -16,6 +16,10 @@ namespace FilmLibraryUI
     {
         public event EventHandler FilmDataChanged;
 
+        /// <summary>
+        /// An event that is triggered when a film's data is changed
+        /// </summary>
+        /// <param name="e">Any arguments required for the event</param>
         protected virtual void OnFilmDataChanged(EventArgs e)
         {
             EventHandler eh = FilmDataChanged;
@@ -25,28 +29,15 @@ namespace FilmLibraryUI
             }
         }
 
-        private FilmModel selectedModel;
-        public EditFilmForm()
-        {
-            InitializeComponent();
-        }
-
-        public EditFilmForm(FilmModel selectedModel)
-        {
-            InitializeComponent();
-            this.selectedModel = selectedModel;
-
-            FilmTitleValue.Text = selectedModel.Title;
-            FilmDescriptionValue.Text = selectedModel.Description;
-            FilmReleaseDateMonthCalander.SelectionStart = selectedModel.ReleaseDate;
-            FilmRatingValue.Text = selectedModel.Rating.ToString();
-        }
-
+        /// <summary>
+        /// Updates film's data on the selected connection type (Text file or Database) and fires event for changes to be made in main form
+        /// </summary>
+        /// <param name="sender">The object that triggered the event</param>
+        /// <param name="e">Any arguments required for the event</param>
         private void UpdateFilmButton_Click(object sender, EventArgs e)
         {
             if (ValidateForm())
             {
-                //TODO: Maybe create a method in FilmModel for updating information
                 selectedModel.Title = FilmTitleValue.Text;
                 selectedModel.Description = FilmDescriptionValue.Text;
                 selectedModel.ReleaseDate = FilmReleaseDateMonthCalander.SelectionStart;
@@ -62,9 +53,53 @@ namespace FilmLibraryUI
             }
         }
 
+        /// <summary>
+        /// Shows Dialog box asking if user is sure they want to delete and if so deletes film from selected connection (Text file or Database)
+        /// and fires event for changes to be made in main form
+        /// </summary>
+        /// <param name="sender">The object that triggered the event</param>
+        /// <param name="e">Any arguments required for the event</param>
+        private void DeleteFilmButton_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this film?", "Delete Confirmation", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                GlobalConfig.Connection.DeleteFilm(selectedModel);
+
+                OnFilmDataChanged(null);
+
+                this.Close();
+            }
+        }
+
+        private FilmModel selectedModel;
+
+        public EditFilmForm()
+        {
+            InitializeComponent();
+        }
+
+        /// <summary>
+        /// Overloaded constructor populates film data fields given a selected film
+        /// </summary>
+        /// <param name="selectedModel">The selected film for editing</param>
+        public EditFilmForm(FilmModel selectedModel)
+        {
+            InitializeComponent();
+            this.selectedModel = selectedModel;
+
+            FilmTitleValue.Text = selectedModel.Title;
+            FilmDescriptionValue.Text = selectedModel.Description;
+            FilmReleaseDateMonthCalander.SelectionStart = selectedModel.ReleaseDate;
+            FilmRatingValue.Text = selectedModel.Rating.ToString();
+        }
+
+        /// <summary>
+        /// Validates the user's input and displays error label's if input is invalid
+        /// </summary>
+        /// <returns>Whether or not the input from the user is valid</returns>
         private bool ValidateForm()
         {
-
             bool output = true;
 
             //Check if information has changed
@@ -76,9 +111,26 @@ namespace FilmLibraryUI
                 output = false;
             }
 
-            if (FilmTitleValue.Text == "" || FilmDescriptionValue.Text == "")
+            if (FilmTitleValue.Text == "")
             {
                 output = false;
+
+                FilmTitleErrorLabel.Text = "Film title must have at least 1 character";
+            }
+            else
+            {
+                FilmTitleErrorLabel.Text = "";
+            }
+
+            if (FilmDescriptionValue.Text == "")
+            {
+                output = false;
+
+                FilmDescriptionErrorLabel.Text = "Film description must have at least 1 character";
+            }
+            else
+            {
+                FilmDescriptionErrorLabel.Text = "";
             }
 
             DateTime dt = FilmReleaseDateMonthCalander.SelectionStart;
@@ -86,6 +138,12 @@ namespace FilmLibraryUI
             if (dt > DateTime.Today)
             {
                 output = false;
+
+                FilmReleaseDateErrorLabel.Text = "Film release date must be earlier than today";
+            }
+            else
+            {
+                FilmReleaseDateErrorLabel.Text = "";
             }
 
             decimal rating = 0;
@@ -94,49 +152,25 @@ namespace FilmLibraryUI
             if (!ratingValid)
             {
                 output = false;
+
+                FilmRatingErrorLabel.Text = "Film rating must be a number e.g(7.8)";
             }
 
             if (rating < 0 || rating > 10)
             {
                 output = false;
+                FilmRatingErrorLabel.Text = "Film rating must be between 0 and 10";
+            }
+
+            if(ratingValid && (rating >= 0 && rating <= 10))
+            {
+                FilmRatingErrorLabel.Text = "";
             }
 
             return output;
         }
 
-        private void DeleteFilmButton_Click(object sender, EventArgs e)
-        {
-            //TODO: Add popup box asking if the user is sure
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this film?", "Delete Confirmation", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                GlobalConfig.Connection.DeleteFilm(selectedModel);
+        
 
-                OnFilmDataChanged(null);
-
-                this.Close();
-            }
-            
-        }
-
-        private void FilmTitleValue_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

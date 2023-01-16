@@ -7,6 +7,9 @@ using FilmLibrary.Models;
 
 namespace FilmLibrary.DataAccess
 {
+    /// <summary>
+    /// An interface that contains the neccesary methods for a connection type (Text File or Database)
+    /// </summary>
     public interface IDataConnection
     {
         FilmModel CreateFilm(FilmModel model);

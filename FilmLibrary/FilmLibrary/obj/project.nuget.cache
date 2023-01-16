@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "We6tI6tHzVBXTkvnvnlwA/1IT3KFy/rFt1ieI9MXTshSbjly7zn75X5QlXpkwmP1rcw9qys6/8K3cKvu06E6xQ==",
+  "dgSpecHash": "EfdKNfLPgBrI+Avo5zU/tP3Ny5G2LKlCyOyqGge3WXecqSj8vXQA+DV1Rpjwn8bAxMpawlUn2YTYeNjt/6H40A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\endez\\Documents\\VS Pojects\\Film-Library\\FilmLibrary\\FilmLibrary\\FilmLibrary.csproj",
+  "projectFilePath": "C:\\Users\\endez\\Documents\\VS Projects\\Film-Library\\FilmLibrary\\FilmLibrary\\FilmLibrary.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\endez\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\endez\\.nuget\\packages\\imdbapilib\\1.9.2\\imdbapilib.1.9.2.nupkg.sha512",

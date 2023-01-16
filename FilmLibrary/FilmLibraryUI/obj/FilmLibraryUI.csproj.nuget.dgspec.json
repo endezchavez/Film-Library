@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\endez\\Documents\\VS Pojects\\Film-Library\\FilmLibrary\\FilmLibraryUI\\FilmLibraryUI.csproj": {}
+    "C:\\Users\\endez\\Documents\\VS Projects\\Film-Library\\FilmLibrary\\FilmLibraryUI\\FilmLibraryUI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\endez\\Documents\\VS Pojects\\Film-Library\\FilmLibrary\\FilmLibraryUI\\FilmLibraryUI.csproj": {
+    "C:\\Users\\endez\\Documents\\VS Projects\\Film-Library\\FilmLibrary\\FilmLibraryUI\\FilmLibraryUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\endez\\Documents\\VS Pojects\\Film-Library\\FilmLibrary\\FilmLibraryUI\\FilmLibraryUI.csproj",
+        "projectUniqueName": "C:\\Users\\endez\\Documents\\VS Projects\\Film-Library\\FilmLibrary\\FilmLibraryUI\\FilmLibraryUI.csproj",
         "projectName": "FilmLibraryUI",
-        "projectPath": "C:\\Users\\endez\\Documents\\VS Pojects\\Film-Library\\FilmLibrary\\FilmLibraryUI\\FilmLibraryUI.csproj",
+        "projectPath": "C:\\Users\\endez\\Documents\\VS Projects\\Film-Library\\FilmLibrary\\FilmLibraryUI\\FilmLibraryUI.csproj",
         "packagesPath": "C:\\Users\\endez\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\endez\\Documents\\VS Pojects\\Film-Library\\FilmLibrary\\FilmLibraryUI\\obj\\",
+        "outputPath": "C:\\Users\\endez\\Documents\\VS Projects\\Film-Library\\FilmLibrary\\FilmLibraryUI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\endez\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\Users\\endez\\Documents\\VS Pojects\\Film-Library\\FilmLibrary\\FilmLibrary\\FilmLibrary.csproj": {
-                "projectPath": "C:\\Users\\endez\\Documents\\VS Pojects\\Film-Library\\FilmLibrary\\FilmLibrary\\FilmLibrary.csproj"
+              "C:\\Users\\endez\\Documents\\VS Projects\\Film-Library\\FilmLibrary\\FilmLibrary\\FilmLibrary.csproj": {
+                "projectPath": "C:\\Users\\endez\\Documents\\VS Projects\\Film-Library\\FilmLibrary\\FilmLibrary\\FilmLibrary.csproj"
               }
             }
           }
@@ -62,18 +62,18 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\endez\\Documents\\VS Pojects\\Film-Library\\FilmLibrary\\FilmLibrary\\FilmLibrary.csproj": {
+    "C:\\Users\\endez\\Documents\\VS Projects\\Film-Library\\FilmLibrary\\FilmLibrary\\FilmLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\endez\\Documents\\VS Pojects\\Film-Library\\FilmLibrary\\FilmLibrary\\FilmLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\endez\\Documents\\VS Projects\\Film-Library\\FilmLibrary\\FilmLibrary\\FilmLibrary.csproj",
         "projectName": "FilmLibrary",
-        "projectPath": "C:\\Users\\endez\\Documents\\VS Pojects\\Film-Library\\FilmLibrary\\FilmLibrary\\FilmLibrary.csproj",
+        "projectPath": "C:\\Users\\endez\\Documents\\VS Projects\\Film-Library\\FilmLibrary\\FilmLibrary\\FilmLibrary.csproj",
         "packagesPath": "C:\\Users\\endez\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\endez\\Documents\\VS Pojects\\Film-Library\\FilmLibrary\\FilmLibrary\\obj\\",
+        "outputPath": "C:\\Users\\endez\\Documents\\VS Projects\\Film-Library\\FilmLibrary\\FilmLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\endez\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -135,7 +135,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

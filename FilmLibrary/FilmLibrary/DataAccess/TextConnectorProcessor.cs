@@ -12,11 +12,21 @@ namespace FilmLibrary.DataAccess.TextHelpers
 {
     public static class TextConnectorProcessor
     {
+        /// <summary>
+        /// An extension mehtod that get's the full file path given a fileName
+        /// </summary>
+        /// <param name="fileName">The file name</param>
+        /// <returns>The full file path as a string</returns>
         public static string FullFilePath(this string fileName)
         {
             return $"{ ConfigurationManager.AppSettings["filePath"] }\\{fileName}";
         }
 
+        /// <summary>
+        /// An extension method that get's all the text in a given file path
+        /// </summary>
+        /// <param name="file">The full file path</param>
+        /// <returns>A list of all strings in the given file path</returns>
         public static List<string> LoadFile(this string file)
         {
             if (!File.Exists(file))
@@ -27,6 +37,11 @@ namespace FilmLibrary.DataAccess.TextHelpers
             return File.ReadAllLines(file).ToList();
         }
 
+        /// <summary>
+        /// An extensions method that converts a list of strings into a list of FilmModels
+        /// </summary>
+        /// <param name="lines">A list of strings</param>
+        /// <returns>A list of FilmModel's</returns>
         public static List<FilmModel> ConvertToFilmModels(this List<string> lines)
         {
             List<FilmModel> output = new List<FilmModel>();
@@ -51,6 +66,11 @@ namespace FilmLibrary.DataAccess.TextHelpers
             return output;
         }
 
+        /// <summary>
+        /// An extension method that saves film data to a text file given a list of films and a file name
+        /// </summary>
+        /// <param name="models">The list of films that are to be saved</param>
+        /// <param name="fileName">The file name</param>
         public static void SaveToFilmFile(this List<FilmModel> models, string fileName)
         {
             List<string> lines = new List<string>();
@@ -63,6 +83,11 @@ namespace FilmLibrary.DataAccess.TextHelpers
             File.WriteAllLines(fileName.FullFilePath(), lines);
         }
 
+        /// <summary>
+        /// An extension method that splits an entry of film data from a text file into an array of strings where each element is a single peice of film data
+        /// </summary>
+        /// <param name="line">The string to be split</param>
+        /// <returns>An array of strings where each element is a single peice of film data</returns>
         public static string[] SplitLines(this string line)
         {
             List<string> result = new List<string>();

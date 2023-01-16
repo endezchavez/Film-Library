@@ -14,7 +14,7 @@ namespace FilmLibrary.DataAccess
     {
 
         private const string db = "Films";
-        // TODO: Make the CreateFilm method actually save to the database
+
         /// <summary>
         /// Saves a film to the database
         /// </summary>
@@ -39,6 +39,10 @@ namespace FilmLibrary.DataAccess
             }
         }
 
+        /// <summary>
+        /// Deletes a film from the database
+        /// </summary>
+        /// <param name="model">The given film to be deleted</param>
         public void DeleteFilm(FilmModel model)
         {
             using (IDbConnection connection = new SqlConnection(GlobalConfig.ConnectionString(db)))
@@ -51,6 +55,10 @@ namespace FilmLibrary.DataAccess
             }
         }
 
+        /// <summary>
+        /// Gets all films from the databse
+        /// </summary>
+        /// <returns>A list of all films in the database</returns>
         public List<FilmModel> GetFilm_All()
         {
             List<FilmModel> output;
@@ -62,6 +70,11 @@ namespace FilmLibrary.DataAccess
             return output;
         }
 
+        /// <summary>
+        /// Get's all films that match a given title
+        /// </summary>
+        /// <param name="input">The title we are searching for</param>
+        /// <returns>A list of all films that match the search string</returns>
         public List<FilmModel> GetFilm_ByTitle(string input)
         {
             List<FilmModel> output;
@@ -76,6 +89,10 @@ namespace FilmLibrary.DataAccess
             return output;
         }
 
+        /// <summary>
+        /// Updates a film's data in the database
+        /// </summary>
+        /// <param name="model">The film that needs to be updated</param>
         public void UpdateFilm(FilmModel model)
         {
             using (IDbConnection connection = new SqlConnection(GlobalConfig.ConnectionString(db)))
