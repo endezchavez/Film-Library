@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.AddFilmLabel = new System.Windows.Forms.Label();
             this.FilmTitleLabel = new System.Windows.Forms.Label();
             this.FilmTitleValue = new System.Windows.Forms.TextBox();
             this.FilmDescriptionValue = new System.Windows.Forms.TextBox();
@@ -43,18 +42,6 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // AddFilmLabel
-            // 
-            this.AddFilmLabel.AutoSize = true;
-            this.AddFilmLabel.BackColor = System.Drawing.Color.Transparent;
-            this.AddFilmLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.AddFilmLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.AddFilmLabel.Location = new System.Drawing.Point(34, 9);
-            this.AddFilmLabel.Name = "AddFilmLabel";
-            this.AddFilmLabel.Size = new System.Drawing.Size(109, 32);
-            this.AddFilmLabel.TabIndex = 1;
-            this.AddFilmLabel.Text = "Add Film";
-            // 
             // FilmTitleLabel
             // 
             this.FilmTitleLabel.AutoSize = true;
@@ -62,7 +49,7 @@
             this.FilmTitleLabel.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.FilmTitleLabel.Location = new System.Drawing.Point(3, 0);
             this.FilmTitleLabel.Name = "FilmTitleLabel";
-            this.FilmTitleLabel.Size = new System.Drawing.Size(67, 32);
+            this.FilmTitleLabel.Size = new System.Drawing.Size(84, 41);
             this.FilmTitleLabel.TabIndex = 5;
             this.FilmTitleLabel.Text = "Title: ";
             // 
@@ -72,17 +59,17 @@
             this.FilmTitleValue.Location = new System.Drawing.Point(205, 3);
             this.FilmTitleValue.MaxLength = 50;
             this.FilmTitleValue.Name = "FilmTitleValue";
-            this.FilmTitleValue.Size = new System.Drawing.Size(532, 39);
+            this.FilmTitleValue.Size = new System.Drawing.Size(532, 47);
             this.FilmTitleValue.TabIndex = 6;
             // 
             // FilmDescriptionValue
             // 
             this.FilmDescriptionValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FilmDescriptionValue.Location = new System.Drawing.Point(205, 45);
+            this.FilmDescriptionValue.Location = new System.Drawing.Point(205, 53);
             this.FilmDescriptionValue.MaxLength = 4000;
             this.FilmDescriptionValue.Multiline = true;
             this.FilmDescriptionValue.Name = "FilmDescriptionValue";
-            this.FilmDescriptionValue.Size = new System.Drawing.Size(532, 215);
+            this.FilmDescriptionValue.Size = new System.Drawing.Size(532, 203);
             this.FilmDescriptionValue.TabIndex = 8;
             // 
             // FilmDescriptionLabel
@@ -90,9 +77,9 @@
             this.FilmDescriptionLabel.AutoSize = true;
             this.FilmDescriptionLabel.Font = new System.Drawing.Font("Segoe UI Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FilmDescriptionLabel.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.FilmDescriptionLabel.Location = new System.Drawing.Point(3, 42);
+            this.FilmDescriptionLabel.Location = new System.Drawing.Point(3, 50);
             this.FilmDescriptionLabel.Name = "FilmDescriptionLabel";
-            this.FilmDescriptionLabel.Size = new System.Drawing.Size(131, 32);
+            this.FilmDescriptionLabel.Size = new System.Drawing.Size(166, 41);
             this.FilmDescriptionLabel.TabIndex = 7;
             this.FilmDescriptionLabel.Text = "Description:";
             // 
@@ -101,18 +88,18 @@
             this.ReleaseDateLabel.AutoSize = true;
             this.ReleaseDateLabel.Font = new System.Drawing.Font("Segoe UI Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ReleaseDateLabel.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.ReleaseDateLabel.Location = new System.Drawing.Point(3, 263);
+            this.ReleaseDateLabel.Location = new System.Drawing.Point(3, 259);
             this.ReleaseDateLabel.Name = "ReleaseDateLabel";
-            this.ReleaseDateLabel.Size = new System.Drawing.Size(148, 32);
+            this.ReleaseDateLabel.Size = new System.Drawing.Size(187, 41);
             this.ReleaseDateLabel.TabIndex = 9;
             this.ReleaseDateLabel.Text = "Release Date:";
             // 
             // FilmRatingValue
             // 
             this.FilmRatingValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FilmRatingValue.Location = new System.Drawing.Point(205, 445);
+            this.FilmRatingValue.Location = new System.Drawing.Point(205, 480);
             this.FilmRatingValue.Name = "FilmRatingValue";
-            this.FilmRatingValue.Size = new System.Drawing.Size(233, 39);
+            this.FilmRatingValue.Size = new System.Drawing.Size(233, 47);
             this.FilmRatingValue.TabIndex = 12;
             this.FilmRatingValue.Text = "0";
             // 
@@ -121,9 +108,9 @@
             this.RatingLabel.AutoSize = true;
             this.RatingLabel.Font = new System.Drawing.Font("Segoe UI Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.RatingLabel.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.RatingLabel.Location = new System.Drawing.Point(3, 442);
+            this.RatingLabel.Location = new System.Drawing.Point(3, 477);
             this.RatingLabel.Name = "RatingLabel";
-            this.RatingLabel.Size = new System.Drawing.Size(82, 32);
+            this.RatingLabel.Size = new System.Drawing.Size(105, 41);
             this.RatingLabel.TabIndex = 11;
             this.RatingLabel.Text = "Rating:";
             // 
@@ -136,7 +123,7 @@
             this.AddFilmButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddFilmButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.AddFilmButton.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.AddFilmButton.Location = new System.Drawing.Point(332, 549);
+            this.AddFilmButton.Location = new System.Drawing.Point(322, 549);
             this.AddFilmButton.Name = "AddFilmButton";
             this.AddFilmButton.Size = new System.Drawing.Size(122, 47);
             this.AddFilmButton.TabIndex = 13;
@@ -146,7 +133,7 @@
             // 
             // FilmReleaseDateMonthCalander
             // 
-            this.FilmReleaseDateMonthCalander.Location = new System.Drawing.Point(211, 272);
+            this.FilmReleaseDateMonthCalander.Location = new System.Drawing.Point(211, 268);
             this.FilmReleaseDateMonthCalander.MaxSelectionCount = 1;
             this.FilmReleaseDateMonthCalander.Name = "FilmReleaseDateMonthCalander";
             this.FilmReleaseDateMonthCalander.TabIndex = 14;
@@ -164,25 +151,24 @@
             this.tableLayoutPanel1.Controls.Add(this.ReleaseDateLabel, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.FilmTitleLabel, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.FilmReleaseDateMonthCalander, 1, 2);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(34, 57);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(34, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.703704F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.47325F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36.83128F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.703704F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(740, 486);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.416196F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.3597F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 41.05462F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.981168F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(740, 531);
             this.tableLayoutPanel1.TabIndex = 15;
             // 
             // AddFilmForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(786, 607);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.AddFilmButton);
-            this.Controls.Add(this.AddFilmLabel);
             this.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "AddFilmForm";
@@ -191,13 +177,10 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private Label AddFilmLabel;
         private Label FilmTitleLabel;
         private TextBox FilmTitleValue;
         private TextBox FilmDescriptionValue;

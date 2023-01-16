@@ -54,7 +54,6 @@ namespace FilmLibrary.DataAccess
         public List<FilmModel> GetFilm_All()
         {
             List<FilmModel> output;
-
             using (IDbConnection connection = new SqlConnection(GlobalConfig.ConnectionString(db)))
             {
                 output = connection.Query<FilmModel>("dbo.spFilm_GetAll").ToList();

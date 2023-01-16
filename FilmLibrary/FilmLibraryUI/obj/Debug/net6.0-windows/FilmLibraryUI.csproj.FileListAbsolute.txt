@@ -100,3 +100,5 @@ C:\Users\endez\Documents\VS Pojects\Film-Library\FilmLibrary\FilmLibraryUI\obj\D
 C:\Users\endez\Documents\VS Pojects\Film-Library\FilmLibrary\FilmLibraryUI\obj\Debug\net6.0-windows\FilmLibraryUI.pdb
 C:\Users\endez\Documents\VS Pojects\Film-Library\FilmLibrary\FilmLibraryUI\obj\Debug\net6.0-windows\FilmLibraryUI.genruntimeconfig.cache
 C:\Users\endez\Documents\VS Pojects\Film-Library\FilmLibrary\FilmLibraryUI\obj\Debug\net6.0-windows\ref\FilmLibraryUI.dll
+C:\Users\endez\Documents\VS Pojects\Film-Library\FilmLibrary\FilmLibraryUI\bin\Debug\net6.0-windows\IMDbApiLib.dll
+C:\Users\endez\Documents\VS Pojects\Film-Library\FilmLibrary\FilmLibraryUI\bin\Debug\net6.0-windows\Newtonsoft.Json.dll

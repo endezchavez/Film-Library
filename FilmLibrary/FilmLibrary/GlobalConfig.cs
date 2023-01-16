@@ -16,13 +16,11 @@ namespace FilmLibrary
         {
             if (connectionType == DatabaseType.SQL)
             {
-                //TODO: Setup SQL connector properly
                 SQLConnector sql = new SQLConnector();
                 Connection = sql;
             }
             else if (connectionType == DatabaseType.TEXT_FILE)
             {
-                //TODO: Setup text connector properly
                 TextConnector text = new TextConnector();
                 Connection = text; 
             }
