@@ -80,6 +80,13 @@ namespace FilmLibrary.DataAccess.TextHelpers
                 lines.Add($"{ model.Id },\"{ model.Title }\",\"{ model.Description }\",{ model.ReleaseDate },{ model.Rating }");
             }
 
+            bool directoryExists = Directory.Exists(@ConfigurationManager.AppSettings["filePath"]);
+
+            if (!directoryExists)
+            {
+                Directory.CreateDirectory(@ConfigurationManager.AppSettings["filePath"]);
+            }
+
             File.WriteAllLines(fileName.FullFilePath(), lines);
         }
 
