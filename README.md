@@ -1,5 +1,11 @@
 # Film-Library
-A Windows form application made using the .NET Framework that allows users to create and store information about films. The application can store data in a microsoft SQL server or a text file as a fallback.
+A Windows form application made using the .NET Framework that allows users to create, edit and store information about films. The application can store data in a microsoft SQL server or a text file as a fallback. The project uses Dapper in order to make communicating with the database easier. One of the main challenges I faced during this project was trying to implement a way to store data to both a text file and an SQL server as the ID's of the film's may differ between both connection types. I opted to prioritize using a SQL server as the data storage and a text file as a backup but this can be overriden when initializing the connection type.
+
+# Future Features
+- Ability to store data about actors/actresses that appear in a given film
+- Ability to store data about the director of a given film
+- Ability to display images/trailers of a given film
+- Ability to pull data from an IMDB API
 
 ![Main Form](https://user-images.githubusercontent.com/15033950/212880577-bf7e6fb4-2296-41c9-ab1b-aff8ae868031.JPG)
 ![Add Film Form](https://user-images.githubusercontent.com/15033950/212880599-c17147b9-5f8d-4e2f-b22a-1298b20f4a7d.JPG)
