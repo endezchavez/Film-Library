@@ -10,6 +10,8 @@ Once the project has been downloaded, navigate to the FilmLibrary\FilmLibraryUI\
 - Ability to display images/trailers of a given film
 - Ability to pull data from an IMDB API
 
+## Screenshots
+
 ![Main Form](https://user-images.githubusercontent.com/15033950/212880577-bf7e6fb4-2296-41c9-ab1b-aff8ae868031.JPG)
 ![Add Film Form](https://user-images.githubusercontent.com/15033950/212880599-c17147b9-5f8d-4e2f-b22a-1298b20f4a7d.JPG)
 ![Edit Film Form](https://user-images.githubusercontent.com/15033950/212880610-1a0cb18e-8622-49b5-999c-d9f0bb94c89b.JPG)
