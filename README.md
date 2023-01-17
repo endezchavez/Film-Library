@@ -1,4 +1,4 @@
-# Film-Library
+# Film Library
 A Windows form application made using the .NET Framework that allows users to create, edit and store information about films. The application can store data in a microsoft SQL server or a text file as a fallback. The project uses Dapper in order to make communicating with the database easier. One of the main challenges I faced during this project was trying to implement a way to store data to both a text file and an SQL server as the ID's of the film's may differ between both connection types. I opted to prioritize using a SQL server as the data storage and a text file as a backup but this can be overriden when initializing the connection type.
 
 ## Future Features
